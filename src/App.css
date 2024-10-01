@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
-}
+/* Daniela Castorena 2024 */
+/* Weather App - App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* general body styles */
+body {
+  background: linear-gradient(to bottom, #00c6ff, rgb(28, 183, 255));
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-header {
+  font-family: 'Fraunces'; 
+  font-size: 45px; 
+  text-align: center; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  min-width: 640px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.weather-container {
+  min-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-title {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 32px;
+  color: white;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #0072ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #005bb5;
+}
+
+.weather-container h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+.weather-container p {
+  color: #fff;
+  margin: 5px 0;
+}
+
+.details p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.hourly {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hourly img {
+  width: 50px;
+  height: 50px;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input::placeholder{
+  font-style: italic;
+}
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+.search-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #333;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.wind-humidity-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wind-section,
+.humidity-section {
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wind-section img {
+  width: 50px;
+  height: 50px;
+}
+
+.humidity-section img {
+  width: 30px;
+  height: 30px;
+  padding: 9px;
+}
+
+.temp-toggle {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.temp-toggle:hover {
+  color: black;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f1f1f1;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
 }
