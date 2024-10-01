@@ -38,7 +38,7 @@ function Weather({ data }) {
                 })
                 .catch(error => console.error('Error fetching forecast data:', error));
         }
-    }, [data]);
+    }, [data, city]);
 
     const { name, sys, main, weather, wind } = weatherData || {};
 
