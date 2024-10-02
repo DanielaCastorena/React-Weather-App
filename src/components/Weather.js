@@ -80,33 +80,35 @@ function Weather({ data }) {
         : <p>No hourly forecast available.</p>;
 
     return (
-        <div className="weather-container">
-            <h1>{name}, {sys.country}</h1>
-            <p>{searchTime}</p>
-            <img src={iconUrl} alt={weatherDescription} />
-            <h1>
-                {unit === 'F' ? `${tempFahrenheit}°F` : `${tempCelsius}°C`}
-                <span className="temp-toggle" onClick={toggleUnit}>
-                    | {unit === 'F' ? '°C' : '°F'}
-                </span>
-            </h1>
-            <p>{capitalizedDescription}</p>
-            <p>Feels like: {unit === 'F' ? `${feelsLikeF}°F` : `${feelsLikeC}°C`}</p>
-            <div className="wind-humidity-container">
-                <div className="wind-section">
-                    <img src={windIcon} alt="Wind icon" className="wind-icon" />
-                    <p>Wind Speed: {windSpeedMph}mph</p>
+        <>
+            <div className="weather-container">
+                <h1>{name}, {sys.country}</h1>
+                <p>{searchTime}</p>
+                <img src={iconUrl} alt={weatherDescription} />
+                <h1>
+                    {unit === 'F' ? `${tempFahrenheit}°F` : `${tempCelsius}°C`}
+                    <span className="temp-toggle" onClick={toggleUnit}>
+                        | {unit === 'F' ? '°C' : '°F'}
+                    </span>
+                </h1>
+                <p>{capitalizedDescription}</p>
+                <p>Feels like: {unit === 'F' ? `${feelsLikeF}°F` : `${feelsLikeC}°C`}</p>
+                <div className="wind-humidity-container">
+                    <div className="wind-section">
+                        <img src={windIcon} alt="Wind icon" className="wind-icon" />
+                        <p>Wind Speed: {windSpeedMph}mph</p>
+                    </div>
+                    <div className="humidity-section">
+                        <img src={rainIcon} alt="Rain icon" className="humidity-icon" />
+                        <p>Humidity: {humidity}%</p>
+                    </div>
                 </div>
-                <div className="humidity-section">
-                    <img src={rainIcon} alt="Rain icon" className="humidity-icon" />
-                    <p>Humidity: {humidity}%</p>
+                <h3>Hourly Forecast:</h3>
+                <div className="hourly-forecast">
+                    {hourlyForecast}
                 </div>
             </div>
-            <h3>Hourly Forecast:</h3>
-            <div className="hourly-forecast">
-                {hourlyForecast}
-            </div>
-        </div>
+        </>
     );
 }
 
