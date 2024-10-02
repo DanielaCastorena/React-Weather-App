@@ -43,6 +43,7 @@ body {
 form {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 20px 0;
 }
 
@@ -52,7 +53,7 @@ form {
 }
 
 input[type="text"] {
-  width: 80%;
+  width: 70%;
   padding: 10px;
   border-radius: 4px 0 0 4px;
   border: 1px solid #ccc;
@@ -60,7 +61,7 @@ input[type="text"] {
 }
 
 button {
-  padding: 15px 15px;
+  padding: 10px;
   background: #0072ff;
   border: none;
   color: white;
@@ -91,8 +92,8 @@ button:hover {
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .hourly {
@@ -105,8 +106,8 @@ img {
 }
 
 .hourly img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .error-message {
@@ -232,4 +233,69 @@ img {
   left: 50%;           
   transform: translateX(-50%);
   width: 100%;
+}
+
+/* for mobile screens */
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+    box-shadow: none;
+  }
+
+  .app-header {
+    font-size: 36px; 
+  }
+
+  .input-container {
+    max-width: 90%; 
+  }
+
+  input[type="text"] {
+    width: 65%;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px; 
+    font-size: 14px;
+  }
+
+  .weather-title {
+    font-size: 24px; 
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    font-size: 30px; 
+  }
+
+  input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .weather-title {
+    font-size: 20px;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
 }
