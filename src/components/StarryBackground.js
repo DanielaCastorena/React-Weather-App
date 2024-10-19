@@ -3,11 +3,12 @@
 
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import '../App.css'; 
 
 const StarryBackground = () => {
   useEffect(() => {
     const stars = [];
-    const starCount = 100; //number of stars
+    const starCount = 200; //number of stars
 
     //create stars
     for (let i = 0; i < starCount; i++) {
@@ -19,10 +20,10 @@ const StarryBackground = () => {
       star.style.opacity = Math.random();
       star.style.width = `${Math.random() * 3 + 1}px`;
       star.style.height = star.style.width; 
-      star.style.top = `${Math.random() * window.innerHeight}px`;
-      star.style.left = `${Math.random() * window.innerWidth}px`;
+      star.style.top = `${Math.random() * 100}vh`; 
+      star.style.left = `${Math.random() * 100}vw`;
 
-      document.body.appendChild(star);
+      document.querySelector('.starry-background').appendChild(star); 
       stars.push(star);
 
       //GSAP animation for sparkle effect
@@ -36,12 +37,12 @@ const StarryBackground = () => {
 
     return () => {
       stars.forEach(star => {
-        document.body.removeChild(star);
+        document.querySelector('.starry-background').removeChild(star); 
       });
     };
   }, []);
 
-  return null;
+  return <div className="starry-background" />; 
 };
 
 export default StarryBackground;

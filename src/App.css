@@ -314,32 +314,12 @@ img {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
               0 0 10px rgba(255, 255, 255, 0.6),
               0 0 15px rgba(255, 255, 255, 0.4);
-  animation: twinkle 1.5s infinite alternate;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.star {
-  position: absolute;
-  border-radius: 50%;
-  background-color: white;
-  pointer-events: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-              0 0 10px rgba(255, 255, 255, 0.6),
-              0 0 15px rgba(255, 255, 255, 0.4);
   animation: twinkle infinite alternate;
 }
 
 @keyframes twinkle {
   0% {
-    opacity: 0.3;
+    opacity: 0;
   }
   100% {
     opacity: 1;
@@ -365,4 +345,14 @@ img {
   transform: translateX(-100);
   width: 100px;
   height: auto;
+}
+
+.starry-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  pointer-events: none; 
+  z-index: -1; 
 }
