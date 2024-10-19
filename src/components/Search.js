@@ -1,17 +1,13 @@
 // Daniela Castorena 2024
 // Weather App - Search.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import '../App.css';
 
 const Search = ({ onSearch }) => {
-  const [city, setCity] = useState(() => {
-    const savedCity = localStorage.getItem('city');
-    return savedCity ? savedCity : '';
-  });
-
+  const [city, setCity] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   
   //api key from OpenWeatherApp
@@ -35,10 +31,6 @@ const Search = ({ onSearch }) => {
       setSuggestions([]);
     }
   };
-
-  useEffect(() => {
-    localStorage.setItem('city', city);
-  }, [city]);
 
   const handleInputChange = (e) => {
     setCity(e.target.value);
@@ -72,7 +64,7 @@ const Search = ({ onSearch }) => {
             className="search-input"
           />
           <button type="submit" className="search-button">
-            <FaSearch /> {/*magnifying glass icon*/}
+            <FaSearch /> {/* magnifying glass icon */}
           </button>
         </form>
         {suggestions.length > 0 && (

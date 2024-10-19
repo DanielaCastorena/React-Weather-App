@@ -7,10 +7,6 @@ import './App.css'
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    {/* footer */}
-    <footer className="footer">
-      Created by Daniela Castorena
-    </footer>
   </React.StrictMode>,
   document.getElementById('root')
 );

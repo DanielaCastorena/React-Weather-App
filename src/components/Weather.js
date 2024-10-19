@@ -8,11 +8,6 @@ import rainIcon from './images/humidity.png';
 import windIcon from './images/wind.png'; 
 
 function Weather({ data }) {
-    const [weatherData, setWeatherData] = useState(() => {
-        const savedData = localStorage.getItem('weatherData');
-        return savedData ? JSON.parse(savedData) : data;
-    });
-
     const [forecastData, setForecastData] = useState(null); 
     const [unit, setUnit] = useState('F');  
     const [searchTime, setSearchTime] = useState('');  
@@ -22,9 +17,6 @@ function Weather({ data }) {
 
     useEffect(() => {
         if (data) {
-            localStorage.setItem('weatherData', JSON.stringify(data));
-            setWeatherData(data);
-
             const now = new Date();
             const formattedTime = now.toLocaleString([], {
                 hour: 'numeric', minute: '2-digit',
@@ -40,9 +32,9 @@ function Weather({ data }) {
         }
     }, [data, city]);
 
-    const { name, sys, main, weather, wind } = weatherData || {};
+    const { name, sys, main, weather, wind } = data || {};
 
-    if (!weatherData || !main || !weather || !sys || !wind) {
+    if (!data || !main || !weather || !sys || !wind) {
         return <p>Loading weather data...</p>; //loading message
     }
 
@@ -58,7 +50,7 @@ function Weather({ data }) {
     const iconUrl = weather ? `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png` : '';
 
     const toggleUnit = () => {
-        setUnit(unit === 'F' ? 'C' : 'F'); //allows users to toggle between fahrenheit and celsius
+        setUnit(unit === 'F' ? 'C' : 'F'); //allows users to toggle between Fahrenheit and Celsius
     };
 
     const hourlyForecast = forecastData && forecastData.list.length > 0
