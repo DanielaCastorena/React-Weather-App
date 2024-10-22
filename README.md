@@ -8,6 +8,7 @@ This is a Weather App built using React. It allows users to search for current w
 • **Hourly Forecast**: Shows the weather forecast for the next 5 hours.  
 • **Error Handling**: Displays an error message if the city is not found or there’s an issue retrieving weather data.  
 • **Responsive Design**: Adjusts layout and styling for various screen sizes, making the app mobile-friendly.  
+• **Automatic Dark/Light Mode**: Implemented an automatic dark/light mode in which the code is told to turn into nighttime after 7pm and daytime is displayed after 7am
 
 ### How it Works
 
