@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Weather App
+This is a Weather App built using React. It allows users to search for current weather conditions by city, view detailed weather data, and see temperature, wind speed, humidity, and a hourly forecast.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Features
+• **Search by City**: Users can input a city name to retrieve up-to-date weather information for that location.  
+• **Toggle Button**: Ability to toggle between Celsius and Fahrenheit.  
+• **Current Weather Details**: Displays current temperature, humidity, wind speed, and weather description (e.g., sunny, cloudy).  
+• **Hourly Forecast**: Shows the weather forecast for the next 5 hours.  
+• **Error Handling**: Displays an error message if the city is not found or there’s an issue retrieving weather data.  
+• **Responsive Design**: Adjusts layout and styling for various screen sizes, making the app mobile-friendly.  
 
-## Available Scripts
+### How it Works
 
-In the project directory, you can run:
+1. **City Search**
+   - Users can input the name of a city in the search bar, and the app will fetch weather data for that location. If the city is found, current weather details will be displayed, as well as a hourly day forecast.
 
-### `npm start`
+2. **Current Weather Details**
+   - Once a city is selected, the following details are shown:
+     - **Temperature**: The current temperature in both Celsius and Fahrenheit.
+     - **Weather Icon**: The current weather's following icon
+     - **Weather Description**: A short description of the weather (e.g., "Clear skies").
+     - **Wind Speed**: Wind speed, displayed in mph.
+     - **Humidity**: The percentage of humidity in the air.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Hourly Forecast**
+   - A hourly forecast is provided, showing:
+     - **Hour and Temp**: Hour and temperatures.
+     - **Weather Icons**: Icons that represent the predicted weather conditions for the day.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Error Handling
+If an invalid city name is entered or the weather data cannot be retrieved for any reason, an error message is displayed, prompting the user to try again.
 
-### `npm test`
+### State Management
+- `weatherData`: Stores the weather details fetched from the API for the current city.  
+- `error`: Manages error messages when there’s an issue retrieving data.  
+- `loading`: Tracks whether the weather data is currently being fetched from the API.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Run the App
+### Prerequisites
+Ensure that you have Node.js and npm installed on your machine.
 
-### `npm run build`
+### Installation
+Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install the dependencies:
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the application:
+npm start
 
-### `npm run eject`
+The app will now be running locally on [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Enhancements
+• Option to save favorite cities for quick access to their weather data.  
+• Displaying weather maps and radar data.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Link to Project
+[weatherapp-dc.netlify.app](https://weatherapp-dc.netlify.app)

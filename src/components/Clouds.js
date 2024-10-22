@@ -28,9 +28,10 @@ const Clouds = () => {
       cloud.style.width = `${Math.random() * 50 + 100}px`;
       cloudContainer.appendChild(cloud);
 
+      const duration = 40;
       gsap.to(cloud, {
-        x: window.innerWidth + Math.random() * 2000 + 'px',
-        duration: 20 + Math.random() * 20,
+        x: window.innerWidth + 'px',
+        duration: duration,
         repeat: -1,
         ease: 'linear',
         onRepeat: () => {
